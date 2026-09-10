@@ -4,7 +4,6 @@ ExternalProject_Add(vulkan
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--filter=tree:0"
     UPDATE_COMMAND ""
-    GIT_REMOTE_NAME origin
     GIT_TAG fc8465f0a5b6
     PATCH_COMMAND ${EXEC} git am --no-3way ${CMAKE_CURRENT_SOURCE_DIR}/vulkan-*.patch
     CONFIGURE_COMMAND ${EXEC} CONF=1 cmake -H<SOURCE_DIR> -B<BINARY_DIR>
