@@ -2,8 +2,7 @@ ExternalProject_Add(libvpl
     GIT_REPOSITORY https://github.com/intel/libvpl.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--filter=tree:0"
-    GIT_REMOTE_NAME origin
-    GIT_TAG main
+    GIT_TAG 674d015bcb29
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${EXEC} CONF=1 cmake -H<SOURCE_DIR> -B<BINARY_DIR>
         -G Ninja
