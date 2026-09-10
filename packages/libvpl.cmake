@@ -4,6 +4,7 @@ ExternalProject_Add(libvpl
     GIT_CLONE_FLAGS "--filter=tree:0"
     GIT_TAG 674d015bcb29
     UPDATE_COMMAND ""
+    PATCH_COMMAND ${EXEC} git apply ${CMAKE_CURRENT_SOURCE_DIR}/libvpl-*.patch
     CONFIGURE_COMMAND ${EXEC} CONF=1 cmake -H<SOURCE_DIR> -B<BINARY_DIR>
         -G Ninja
         -DCMAKE_BUILD_TYPE=Release
