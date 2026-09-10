@@ -4,8 +4,7 @@ ExternalProject_Add(mbedtls
     GIT_CLONE_FLAGS "--filter=tree:0"
     PATCH_COMMAND ${EXEC} git am --3way ${CMAKE_CURRENT_SOURCE_DIR}/mbedtls-*.patch
     UPDATE_COMMAND ""
-    GIT_REMOTE_NAME origin
-    GIT_TAG master
+    GIT_TAG 346ece94ccf5
     GIT_RESET 1ec69067fa1351427f904362c1221b31538c8b57 # v3.5.0
     CONFIGURE_COMMAND ${EXEC} CONF=1 cmake -H<SOURCE_DIR> -B<BINARY_DIR>
         -G Ninja
