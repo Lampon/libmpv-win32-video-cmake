@@ -2,6 +2,7 @@ ExternalProject_Add(mingw-w64
     GIT_REPOSITORY https://github.com/mingw-w64/mingw-w64.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--filter=tree:0"
+    GIT_TAG ddda991ad0
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
