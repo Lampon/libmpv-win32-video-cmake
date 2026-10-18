@@ -168,6 +168,7 @@ ExternalProject_Add(ffmpeg
         --enable-decoder=ass
         --enable-decoder=dvbsub
         --enable-decoder=dvdsub
+        --enable-decoder=pgssub
         --enable-decoder=srt
         --enable-decoder=stl
         --enable-decoder=subrip
@@ -177,6 +178,7 @@ ExternalProject_Add(ffmpeg
         --enable-decoder=vplayer
         --enable-decoder=webvtt
         --enable-decoder=movtext
+        --enable-decoder=xsub
 
         --enable-decoder=mjpeg
         --enable-decoder=ljpeg
@@ -242,6 +244,8 @@ ExternalProject_Add(ffmpeg
         --enable-demuxer=ass
         --enable-demuxer=srt
         --enable-demuxer=stl
+        --enable-demuxer=sup
+        --enable-demuxer=vobsub
         --enable-demuxer=webvtt
         --enable-demuxer=subviewer
         --enable-demuxer=subviewer1
