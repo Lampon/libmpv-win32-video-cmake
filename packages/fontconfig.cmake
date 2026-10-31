@@ -7,8 +7,14 @@ ExternalProject_Add(fontconfig
     GIT_REPOSITORY https://gitlab.freedesktop.org/fontconfig/fontconfig.git
     SOURCE_DIR ${SOURCE_LOCATION}
     UPDATE_COMMAND ""
-    GIT_REMOTE_NAME origin
-    GIT_TAG main
+    # Pinned: upstream main moved `python3 = import('python')` from line 97 to
+    # 125 in meson.build, so fontconfig-0001-*.patch no longer applies
+    # ("sha1 information is lacking or useless (meson.build)").
+    # 939e33e is the last commit where the patch applies cleanly (verified
+    # locally with `git am --3way`).
+    # NOTE: do NOT add GIT_REMOTE_NAME alongside a commit SHA -- reset_head.sh
+    # walks @{u}, and a detached HEAD has no upstream (see repo conventions).
+    GIT_TAG 939e33ee473d
     GIT_CLONE_FLAGS "--filter=tree:0"
     PATCH_COMMAND ${EXEC} git am --3way ${CMAKE_CURRENT_SOURCE_DIR}/fontconfig-*.patch
     CONFIGURE_COMMAND ""
